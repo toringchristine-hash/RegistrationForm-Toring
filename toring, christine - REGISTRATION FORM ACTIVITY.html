@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My CSS Registration Form</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #11cb1d, #fc2594);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    .container {
+      background: rgb(243, 243, 237);
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(66, 99, 134, 0.2);
+      width: 350px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      text-align: left;
+      margin-bottom: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      color: #444;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      margin-top: 5px;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #2575fc;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      background: #62d70e;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #6a11cb;
+    }
+
+    .message {
+      display: none;
+      margin-top: 20px;
+      font-weight: bold;
+      color: green;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>My CSS Registration Form</h2>
+    <form id="registerForm">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" required>
+      </div>
+      <div class="form-group">
+        <label>Email Account</label>
+        <input type="email" required>
+      </div>
+      <div class="form-group">
+        <label>Grade & School</label>
+        <input type= required>
+      </div>
+      <button type="submit">Register</button>
+    </form>
+    <div class="message" id="successMsg">YOU'RE SUCCESSFULLY REGISTERED ✅</div>
+  </div>
+
+  <script>
+    const form = document.getElementById('registerForm');
+    const msg = document.getElementById('successMsg');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); 
+      msg.style.display = 'block';
+      form.reset();
+    });
+  </script>
+</body>
+</html>
